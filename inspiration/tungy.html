@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tungy - Less Scrolling, More Living</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#e6e8ea",
+                    "on-tertiary-container": "#00431e",
+                    "primary-fixed": "#d3e4ff",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#f7f9fb",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#191c1e",
+                    "tertiary": "#006d36",
+                    "tertiary-fixed": "#6dfe9c",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#c0c7d4",
+                    "on-secondary-container": "#793146",
+                    "tertiary-container": "#11bb62",
+                    "inverse-surface": "#2d3133",
+                    "on-tertiary-fixed": "#00210c",
+                    "secondary-fixed-dim": "#ffb1c2",
+                    "on-secondary-fixed": "#3e0219",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-primary-fixed-variant": "#004882",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#a2c9ff",
+                    "on-primary-fixed": "#001c38",
+                    "secondary": "#93465b",
+                    "on-tertiary-fixed-variant": "#005227",
+                    "surface-container": "#eceef0",
+                    "error": "#ba1a1a",
+                    "background": "#f7f9fb",
+                    "outline": "#717783",
+                    "surface-container-low": "#f2f4f6",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#762e43",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#0060aa",
+                    "surface-bright": "#f7f9fb",
+                    "secondary-fixed": "#ffd9e0",
+                    "surface-dim": "#d8dadc",
+                    "primary-container": "#58a6ff",
+                    "on-surface-variant": "#414752",
+                    "tertiary-fixed-dim": "#4de082",
+                    "on-background": "#191c1e",
+                    "secondary-container": "#fd9db4",
+                    "inverse-primary": "#a2c9ff",
+                    "on-primary-container": "#003a6b",
+                    "primary": "#0060aa",
+                    "surface-variant": "#e0e3e5",
+                    "surface-container-highest": "#e0e3e5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-padding": "20px",
+                    "gutter": "16px",
+                    "stack-sm": "12px",
+                    "base": "8px",
+                    "section-gap": "40px",
+                    "stack-md": "24px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "display-lg": ["Bricolage Grotesque"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "label-bold": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .block-shadow-primary {
+            box-shadow: 0 4px 0 0 #004882;
+        }
+        .block-shadow-primary:active {
+            box-shadow: 0 0 0 0 #004882;
+            transform: translateY(4px);
+        }
+        .block-shadow-white {
+            box-shadow: 0 4px 0 0 #E2E8F0;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen pb-32">
+<!-- Top App Bar -->
+<header class="bg-surface dark:bg-on-background flex justify-between items-center px-container-padding py-base w-full fixed top-0 z-50">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A playful, friendly mascot icon for the Tungy app, rendered in a soft-tactile digital art style with gentle pastel colors and friendly, big eyes, against a clean white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj1b-Hi40OcgscrWdjWeZ_fncljo_sDzKplAJEDYt2cEQMgsuHGsutW4-vs8fpS1TqiGMqc1JrZskRnX7rWaMhH9IHZuiAAzIqMWkWct5ALMYQUx55PfqLkF3dctkgAJp97ntxMm_v4r1msCPSc7eXxaJJBGz2-WyT5ZxE1ZO0LJ2qfHzyml9x74nYfRKyGsw1e1P9jfhWmkokd9gxmzv_eq5r4Am2aPKacL4DC6uNEPKMbWbIuOH6SPaRHCbh3CHH6Q"/>
+</div>
+<span class="font-headline-md text-headline-md font-extrabold text-on-surface dark:text-inverse-on-surface">Tungy</span>
+</div>
+<div class="flex items-center gap-stack-sm bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-bold text-label-bold">12</span>
+</div>
+</header>
+<main class="max-w-[600px] mx-auto px-container-padding pt-24">
+<!-- Mascot Hero Section -->
+<section class="flex flex-col items-center mb-section-gap">
+<div class="relative w-48 h-64 flex items-center justify-center animate-float">
+<!-- Mascot Image -->
+<img class="h-full object-contain" data-alt="Tungy the mascot, a whimsical creature with a long neck and a friendly expression, standing confidently in a playful digital illustration. The lighting is bright and cheerful, utilizing a soft pastel color palette of sky blue and mint green to create a welcoming, encouraging atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX7y6DoLaF5IWnzlmbep1D6893vnDJVQY--OQFtgOqty4apZoV97vRkVP0ptMzJVqYJ2jRCfOr8E7LJ6QuxunF4uiGRs1u_zH3JVueMBfrBgOXle6fBadEYsQeJCg8-byFSUONxPMrkFVuGFazVVIs9UnMvDtIQ_f35o0_autaEBhYIQuGgqb7YoCsu9ij5a8l1oN7RFMpbS-f37fHLLGOcKNNX2j4USMcqAcTx0xPi-X_6a_3cgGvcuuOrQSaUhnwNg"/>
+</div>
+<div class="text-center mt-stack-sm">
+<h1 class="font-display-lg text-display-lg text-primary">90%</h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant">Brain Health</p>
+</div>
+<!-- Custom Gauge -->
+<div class="w-full mt-stack-md bg-surface-container-high h-3 rounded-full overflow-hidden">
+<div class="bg-tertiary-container h-full w-[90%] transition-all duration-1000 ease-out"></div>
+</div>
+</section>
+<!-- Stats Bento Grid -->
+<section class="grid grid-cols-3 gap-gutter mb-section-gap">
+<div class="bg-surface-container-low border border-outline-variant rounded-[24px] p-4 flex flex-col items-center justify-center gap-base">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">skull</span>
+<div class="text-center">
+<p class="font-label-bold text-label-bold">1h 24m</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Rot time</p>
+</div>
+</div>
+<div class="bg-primary-fixed border border-outline-variant rounded-[24px] p-4 flex flex-col items-center justify-center gap-base">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">smartphone</span>
+<div class="text-center">
+<p class="font-label-bold text-label-bold">32</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Pickups</p>
+</div>
+</div>
+<div class="bg-tertiary-fixed border border-outline-variant rounded-[24px] p-4 flex flex-col items-center justify-center gap-base">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">timer</span>
+<div class="text-center">
+<p class="font-label-bold text-label-bold">4m</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Focus time</p>
+</div>
+</div>
+</section>
+<!-- Main Action -->
+<div class="mb-section-gap">
+<button class="w-full bg-primary-container text-on-primary-container font-headline-md text-headline-md py-4 rounded-full block-shadow-primary transition-all flex items-center justify-center gap-base">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                Start Focus
+            </button>
+</div>
+<!-- Top Offenders -->
+<section class="mb-section-gap">
+<h2 class="font-headline-md text-headline-md mb-stack-md">Top Offenders</h2>
+<div class="flex flex-col gap-base">
+<!-- App List Item 1 -->
+<div class="bg-white border border-outline-variant rounded-xl p-4 flex items-center justify-between block-shadow-white">
+<div class="flex items-center gap-stack-sm">
+<div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 flex items-center justify-center">
+<img class="w-6 h-6 object-contain" data-alt="A clean, minimalist 3D icon for a social media app like Instagram, featuring a stylized camera lens in a vibrant gradient palette of sunset pink, deep orange, and soft purple, rendered in a high-gloss tactile style consistent with a modern UI dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoidNHc_6m5zzXTZJud9slz8SIkBRGzN1Uad50Gl5ilss_dMHldZqpf6uygmM6Wp8kV5WF2Eu8fuE1s8FMKqoFL0ZnAbpxVfqv9yziBTNWxIMNaPE4lK18Aw74O19fOBjMjsGmZw0yqH__E3ReAzjzhlJUXAYos96RXyQfYCBsfkcUHojGjzdfGDTqw7dv7a6dB4dd9FuvlgX36oGHoaRbSVxRvt5ZLbFtGG20hBR8ocKGdQ_r1zfp"/>
+</div>
+<div>
+<p class="font-label-bold text-label-bold">Instagram</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Social Media</p>
+</div>
+</div>
+<span class="font-label-bold text-label-bold text-error">28m</span>
+</div>
+<!-- App List Item 2 -->
+<div class="bg-white border border-outline-variant rounded-xl p-4 flex items-center justify-between block-shadow-white">
+<div class="flex items-center gap-stack-sm">
+<div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center">
+<img class="w-6 h-6 object-contain" data-alt="A sleek and modern 3D icon for a microblogging app like X, showing a bold white letter 'X' on a deep matte black background. The icon has a premium, soft-edge finish that fits perfectly within a light-mode digital dashboard design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmwrFJRW70eLO7UuOiFcZv8EVJo4yljgqPE5z1TFQdiGfPx9TqXIgn_SQ70L47arIJr1SH9D27nYXYrA6YFBbM6avjwrXu-0VGHzUzI51Fvj7ESORhl1dlIKQ7bBBue1JH0UrOqsWbOHSgwhy0iqIp0X02hVqTRdnbYVdgNr_Xs8yjECF5YWm4AV_vyNvBEdAm1HLmYtuksMqTnu3bBwWX1jfwEewzyBLhJh61Hm17UyFyX7d0tdwl"/>
+</div>
+<div>
+<p class="font-label-bold text-label-bold">X</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Social Media</p>
+</div>
+</div>
+<span class="font-label-bold text-label-bold text-error">25m</span>
+</div>
+<!-- App List Item 3 -->
+<div class="bg-white border border-outline-variant rounded-xl p-4 flex items-center justify-between block-shadow-white">
+<div class="flex items-center gap-stack-sm">
+<div class="w-10 h-10 rounded-lg bg-[#25D366] flex items-center justify-center">
+<img class="w-6 h-6 object-contain" data-alt="A clean 3D render of a messaging app icon like WhatsApp, featuring a friendly white speech bubble with a phone handset silhouette inside, set against a vibrant mint green background. The style is playful and tactile, with soft shadows and rounded corners." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVcIyd8VjSmHGywXkoBEc2OatbQ6Mnfyj42PK76VEJ39JMk0Xd9KLNrpNLn3GlBeuq6qYdKdi4tIq6iQpGp72EmZzDIiCqdXNS2RmcpsVfFvyg82AH0aDCZnSbhqv_Ym_Qvj2K3IOnmZCQawXpv4YyWRrxlUvJ7uDguczJTv7qRQv0It7FjzP43MwNHXSLLNEkR44LHZqccUGpewWCEmXz12xxYSOLY_r2MOdkAarOG0ccGVH62kPb"/>
+</div>
+<div>
+<p class="font-label-bold text-label-bold">WhatsApp</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Messaging</p>
+</div>
+</div>
+<span class="font-label-bold text-label-bold text-secondary">14m</span>
+</div>
+</div>
+</section>
+<!-- Brand Social Proof -->
+<section class="flex flex-col items-center gap-base mt-section-gap opacity-50">
+<span class="font-label-sm text-label-sm uppercase tracking-widest">As seen in</span>
+<div class="h-6 overflow-visible">
+<img class="h-full object-contain grayscale brightness-0 opacity-70" data-alt="A minimalist, monochromatic wordmark logo of The New York Times, rendered in deep black against a soft light-gray background. The typography is elegant and classic, serving as a social proof element in a modern, clean mobile application interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8ZeHaExBVINwuPs_VnxeC-nVVPAahjg-qyI2vrWf1YLzVALVWutx5cmRkTzZ-D2J1J23Hdq79CvVe3EouvzTq3GjN_DzMqoNVGs6kUuC5GgnUSqL9plsyhZhGKoHWLk34vdHwqHZx2kkUrQW1BEDTbbu00iAt54qVBqt7hjlDaYsZzqKoK8U3b5682b9xqUS2jENKHP--AfLTuyobnVfqv99J7e5pDHCa7STCWdyuy9hJFbTwtXP-"/>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="bg-white/80 dark:bg-inverse-surface/80 backdrop-blur-xl border-t border-outline-variant dark:border-outline fixed bottom-0 w-full z-50 rounded-t-xl shadow-lg dark:shadow-none h-20 px-4 pb-safe flex justify-around items-center max-w-lg left-1/2 -translate-x-1/2">
+<!-- Home (Active) -->
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed rounded-full px-4 py-1 scale-90 duration-150 ease-out">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</button>
+<!-- Block -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">lock</span>
+<span class="font-label-sm text-label-sm">Block</span>
+</button>
+<!-- Focus -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">timer</span>
+<span class="font-label-sm text-label-sm">Focus</span>
+</button>
+<!-- Stats -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-label-sm text-label-sm">Stats</span>
+</button>
+<!-- Settings -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-sm text-label-sm">Settings</span>
+</button>
+</nav>
+<script>
+        // Micro-interaction: Update progress bar on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const bar = document.querySelector('.bg-tertiary-container');
+            if(bar) {
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = '90%';
+                }, 300);
+            }
+        });
+
+        // Click effects for app items
+        document.querySelectorAll('.block-shadow-white').forEach(card => {
+            card.addEventListener('mousedown', () => {
+                card.style.transform = 'translateY(2px)';
+                card.style.boxShadow = '0 2px 0 0 #E2E8F0';
+            });
+            card.addEventListener('mouseup', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '0 4px 0 0 #E2E8F0';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '0 4px 0 0 #E2E8F0';
+            });
+        });
+    </script>
+</body></html>
