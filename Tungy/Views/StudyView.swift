@@ -7,6 +7,7 @@ struct StudyView: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 20) {
+                    progressPanel
                     deckPicker
                     modePicker
                     studyCard
@@ -16,6 +17,19 @@ struct StudyView: View {
             .background(TungyTheme.background.ignoresSafeArea())
             .navigationTitle("Focus")
         }
+    }
+
+    private var progressPanel: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(appModel.isUnlockedForToday ? "Unlocked for today" : "\(appModel.dailyProgress.completedCards)/\(appModel.dailyGoal.requiredCards) cards")
+                .font(.title3.weight(.heavy))
+                .foregroundStyle(appModel.isUnlockedForToday ? TungyTheme.tertiaryContainer : TungyTheme.primary)
+
+            Text(appModel.dailyStatusText)
+                .font(.subheadline)
+                .foregroundStyle(TungyTheme.outline)
+        }
+        .studyPanel()
     }
 
     private var deckPicker: some View {

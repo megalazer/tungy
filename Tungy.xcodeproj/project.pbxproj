@@ -14,6 +14,8 @@
 		A70BA7BCDD9BB3C1D0C8D132 /* ScreenTimeBlocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30A270148D7AB93F650F4C /* ScreenTimeBlocker.swift */; };
 		CD491FB29449BCDE8DDD5E9C /* FlashcardModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E239571CD5BEBE68F659551 /* FlashcardModels.swift */; };
 		8EE7FD9D52DA13AA8B0A2BC9 /* FlashcardEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B97A5CD4F35037E8CAB72 /* FlashcardEngine.swift */; };
+		E5B441AFBF23D352BD7C8353 /* DailyGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725FED58D1D021D839F6F8B4 /* DailyGoal.swift */; };
+		4BD070703B03DB804581C68F /* DailyGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807CA0C92E51DF1B1C17DBB0 /* DailyGate.swift */; };
 		15B129969BC84DD5E1F5A9DD /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF079EC6DE54A5899BC602 /* RootTabView.swift */; };
 		B614086E764A795F1F090192 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A220BA2A5D28669AA01D376 /* HomeView.swift */; };
 		87F3CD9CB34901E944449609 /* BlockSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFCEE293588F7F840E3C38 /* BlockSetupView.swift */; };
@@ -23,6 +25,7 @@
 		20E7C1D0BBEF20BB073812B2 /* TungyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748A0A342955DEE7DE3A8527 /* TungyTests.swift */; };
 		B13CB2A2E07F8602BADCB248 /* TungyStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5E145259F0F4A9420F32F /* TungyStoreTests.swift */; };
 		A18FB55CD8F5D85CA87B8D38 /* FlashcardEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130459CCB14D9A09B16B6947 /* FlashcardEngineTests.swift */; };
+		E549C7117E344AD9A3802378 /* DailyGateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4F3976AF13A7B18E621C23 /* DailyGateTests.swift */; };
 		A3D71ED516D76940E9DA4814 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B449F779472533285F851392 /* Assets.xcassets */; };
 		1E4BDDE70ECB6AF8D127F407 /* FamilyControls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D93D295DB4010C8537064A10 /* FamilyControls.framework */; };
 		AC704A7D1BA3ADCEDF97B735 /* ManagedSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 970958FA005D9BD24E790009 /* ManagedSettings.framework */; };
@@ -46,6 +49,8 @@
 		DD30A270148D7AB93F650F4C /* ScreenTimeBlocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTime/ScreenTimeBlocker.swift; sourceTree = "<group>"; };
 		2E239571CD5BEBE68F659551 /* FlashcardModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcards/FlashcardModels.swift; sourceTree = "<group>"; };
 		5E4B97A5CD4F35037E8CAB72 /* FlashcardEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcards/FlashcardEngine.swift; sourceTree = "<group>"; };
+		725FED58D1D021D839F6F8B4 /* DailyGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcards/DailyGoal.swift; sourceTree = "<group>"; };
+		807CA0C92E51DF1B1C17DBB0 /* DailyGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcards/DailyGate.swift; sourceTree = "<group>"; };
 		CBEF079EC6DE54A5899BC602 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/RootTabView.swift; sourceTree = "<group>"; };
 		3A220BA2A5D28669AA01D376 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/HomeView.swift; sourceTree = "<group>"; };
 		0FAFCEE293588F7F840E3C38 /* BlockSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/BlockSetupView.swift; sourceTree = "<group>"; };
@@ -55,6 +60,7 @@
 		748A0A342955DEE7DE3A8527 /* TungyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TungyTests.swift; sourceTree = "<group>"; };
 		A5C5E145259F0F4A9420F32F /* TungyStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TungyStoreTests.swift; sourceTree = "<group>"; };
 		130459CCB14D9A09B16B6947 /* FlashcardEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardEngineTests.swift; sourceTree = "<group>"; };
+		6B4F3976AF13A7B18E621C23 /* DailyGateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGateTests.swift; sourceTree = "<group>"; };
 		B449F779472533285F851392 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A7AC6DB5C4DBB26235C32E2 /* Tungy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tungy.entitlements; sourceTree = "<group>"; };
 		D93D295DB4010C8537064A10 /* FamilyControls.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FamilyControls.framework; path = System/Library/Frameworks/FamilyControls.framework; sourceTree = SDKROOT; };
@@ -103,6 +109,8 @@
 				DD30A270148D7AB93F650F4C,
 				2E239571CD5BEBE68F659551,
 				5E4B97A5CD4F35037E8CAB72,
+				725FED58D1D021D839F6F8B4,
+				807CA0C92E51DF1B1C17DBB0,
 				CBEF079EC6DE54A5899BC602,
 				3A220BA2A5D28669AA01D376,
 				0FAFCEE293588F7F840E3C38,
@@ -121,6 +129,7 @@
 				748A0A342955DEE7DE3A8527,
 				A5C5E145259F0F4A9420F32F,
 				130459CCB14D9A09B16B6947,
+				6B4F3976AF13A7B18E621C23,
 			);
 			path = TungyTests;
 			sourceTree = "<group>";
@@ -249,6 +258,8 @@
 				A70BA7BCDD9BB3C1D0C8D132 /* ScreenTimeBlocker.swift in Sources */,
 				CD491FB29449BCDE8DDD5E9C /* FlashcardModels.swift in Sources */,
 				8EE7FD9D52DA13AA8B0A2BC9 /* FlashcardEngine.swift in Sources */,
+				E5B441AFBF23D352BD7C8353 /* DailyGoal.swift in Sources */,
+				4BD070703B03DB804581C68F /* DailyGate.swift in Sources */,
 				15B129969BC84DD5E1F5A9DD /* RootTabView.swift in Sources */,
 				B614086E764A795F1F090192 /* HomeView.swift in Sources */,
 				87F3CD9CB34901E944449609 /* BlockSetupView.swift in Sources */,
@@ -265,6 +276,7 @@
 				20E7C1D0BBEF20BB073812B2 /* TungyTests.swift in Sources */,
 				B13CB2A2E07F8602BADCB248 /* TungyStoreTests.swift in Sources */,
 				A18FB55CD8F5D85CA87B8D38 /* FlashcardEngineTests.swift in Sources */,
+				E549C7117E344AD9A3802378 /* DailyGateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

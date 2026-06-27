@@ -12,7 +12,7 @@ struct HomeView: View {
                     brainHealthCard
                     statsGrid
                     startFocusButton
-                    topOffendersCard
+                    blockingStatusCard
                 }
                 .padding(20)
             }
@@ -75,12 +75,12 @@ struct HomeView: View {
                         .foregroundStyle(TungyTheme.outline)
                 }
                 Spacer()
-                Text("90%")
+                Text("\(appModel.brainHealthPercent)%")
                     .font(.system(size: 44, weight: .heavy, design: .rounded))
                     .foregroundStyle(TungyTheme.primary)
             }
 
-            ProgressView(value: 0.9)
+            ProgressView(value: Double(appModel.brainHealthPercent) / 100.0)
                 .tint(TungyTheme.tertiaryContainer)
                 .scaleEffect(x: 1, y: 2, anchor: .center)
         }
@@ -89,15 +89,15 @@ struct HomeView: View {
 
     private var statsGrid: some View {
         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
-            StatCard(title: "Rot time", value: "2h 10m", symbolName: "iphone.gen3")
-            StatCard(title: "Pickups", value: "37", symbolName: "hand.tap.fill")
-            StatCard(title: "Focus time", value: "45m", symbolName: "timer")
+            StatCard(title: "Cards", value: "\(appModel.dailyProgress.completedCards)", symbolName: "checkmark.circle.fill")
+            StatCard(title: "Goal", value: "\(appModel.dailyGoal.requiredCards)", symbolName: "target")
+            StatCard(title: "Status", value: appModel.dailyStatusText, symbolName: "lock.fill")
         }
     }
 
     private var startFocusButton: some View {
         Button(action: {}) {
-            Text("Start Focus")
+            Text(appModel.homeCallToActionTitle)
                 .font(.headline.weight(.bold))
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 18)
@@ -109,15 +109,19 @@ struct HomeView: View {
         .buttonStyle(.plain)
     }
 
-    private var topOffendersCard: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Text("Top Offenders")
+    private var blockingStatusCard: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Blocking Status")
                 .font(.title3.weight(.heavy))
                 .foregroundStyle(TungyTheme.onSurface)
 
-            OffenderRow(rank: 1, name: "Social", time: "1h 12m", color: TungyTheme.secondaryContainer)
-            OffenderRow(rank: 2, name: "Video", time: "38m", color: TungyTheme.primaryContainer)
-            OffenderRow(rank: 3, name: "Games", time: "20m", color: TungyTheme.tertiaryContainer)
+            Text(appModel.dailyStatusText)
+                .font(.headline.weight(.bold))
+                .foregroundStyle(appModel.isUnlockedForToday ? TungyTheme.tertiaryContainer : TungyTheme.secondary)
+
+            Text("Finish today's cards to release selected apps. Real usage reports arrive in the DeviceActivity branch.")
+                .font(.subheadline)
+                .foregroundStyle(TungyTheme.outline)
         }
         .cardStyle(background: TungyTheme.surfaceContainerLow)
     }
@@ -146,29 +150,6 @@ private struct StatCard: View {
     }
 }
 
-private struct OffenderRow: View {
-    let rank: Int
-    let name: String
-    let time: String
-    let color: Color
-
-    var body: some View {
-        HStack(spacing: 12) {
-            Text("\(rank)")
-                .font(.headline.weight(.heavy))
-                .frame(width: 32, height: 32)
-                .background(color)
-                .clipShape(Circle())
-            Text(name)
-                .font(.body.weight(.semibold))
-            Spacer()
-            Text(time)
-                .font(.subheadline.weight(.bold))
-                .foregroundStyle(TungyTheme.outline)
-        }
-        .foregroundStyle(TungyTheme.onSurface)
-    }
-}
 
 private extension View {
     func cardStyle(background: Color) -> some View {

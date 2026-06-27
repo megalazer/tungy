@@ -6,6 +6,8 @@ final class TungyStore {
 
     private enum Keys {
         static let flashcardDecks = "flashcards.decks.v1"
+        static let dailyGoal = "daily.goal.v1"
+        static let dailyProgress = "daily.progress.v1"
     }
     let defaults: UserDefaults
     let isUsingFallbackDefaults: Bool
@@ -52,5 +54,21 @@ final class TungyStore {
 
     func saveDecks(_ decks: [Deck]) throws {
         try saveCodable(decks, forKey: Keys.flashcardDecks)
+    }
+
+    func loadDailyGoal() -> DailyGoal {
+        loadCodable(DailyGoal.self, forKey: Keys.dailyGoal) ?? .default
+    }
+
+    func saveDailyGoal(_ goal: DailyGoal) throws {
+        try saveCodable(goal, forKey: Keys.dailyGoal)
+    }
+
+    func loadDailyProgress() -> DailyProgress? {
+        loadCodable(DailyProgress.self, forKey: Keys.dailyProgress)
+    }
+
+    func saveDailyProgress(_ progress: DailyProgress) throws {
+        try saveCodable(progress, forKey: Keys.dailyProgress)
     }
 }

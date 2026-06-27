@@ -2,6 +2,7 @@ import FamilyControls
 import SwiftUI
 
 struct BlockSetupView: View {
+    @EnvironmentObject private var appModel: AppModel
     @EnvironmentObject private var blocker: ScreenTimeBlocker
     @State private var isPickerPresented = false
 
@@ -24,7 +25,10 @@ struct BlockSetupView: View {
     private var selectionBinding: Binding<FamilyActivitySelection> {
         Binding(
             get: { blocker.selection },
-            set: { blocker.updateSelection($0) }
+            set: {
+                blocker.updateSelection($0)
+                appModel.enforceDailyBlocking()
+            }
         )
     }
 
@@ -46,6 +50,7 @@ struct BlockSetupView: View {
             Button {
                 Task {
                     await blocker.requestAuthorization()
+                    appModel.enforceDailyBlocking()
                 }
             } label: {
                 Text("Request Screen Time Permission")
@@ -142,4 +147,5 @@ private extension View {
 #Preview {
     BlockSetupView()
         .environmentObject(ScreenTimeBlocker.shared)
+        .environmentObject(AppModel(store: TungyStore(suiteName: ""), blocker: ScreenTimeBlocker.shared))
 }
