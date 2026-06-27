@@ -1,0 +1,12 @@
+[project]
+name = "orca-watch-bridge"
+version = "0.1.0"
+description = "Apple Watch Shortcut transcript bridge for Orca ADE projects"
+requires-python = ">=3.9"
+
+[project.scripts]
+orca-watch-bridge = "orca_watch_bridge.server:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
