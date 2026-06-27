@@ -26,6 +26,10 @@ final class AppModel: ObservableObject {
         studyCards.first
     }
 
+    var subjectSummaries: [SubjectSummary] {
+        flashcardEngine.subjectSummaries(decks: decks)
+    }
+
     var isUnlockedForToday: Bool {
         dailyGate.isUnlocked(progress: dailyProgress, goal: dailyGoal)
     }

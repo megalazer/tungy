@@ -33,6 +33,40 @@ struct FlashcardEngine {
         }
     }
 
+    func subjectSummaries(decks: [Deck]) -> [SubjectSummary] {
+        let groupedCards = Dictionary(grouping: decks, by: \.subject)
+            .mapValues { decks in decks.flatMap(\.cards) }
+
+        return groupedCards.map { subject, cards in
+            let totalCards = cards.count
+            let averageWeakness = totalCards == 0 ? 0.0 : cards.reduce(0.0) { $0 + $1.stats.weaknessScore } / Double(totalCards)
+            let weakTagCounts = cards
+                .filter { $0.stats.weaknessScore >= 0.5 }
+                .flatMap(\.tags)
+                .reduce(into: [String: Int]()) { counts, tag in
+                    counts[tag, default: 0] += 1
+                }
+
+            let weakestTags = weakTagCounts
+                .sorted { lhs, rhs in
+                    if lhs.value != rhs.value {
+                        return lhs.value > rhs.value
+                    }
+                    return lhs.key < rhs.key
+                }
+                .prefix(3)
+                .map(\.key)
+
+            return SubjectSummary(
+                subject: subject,
+                totalCards: totalCards,
+                averageWeakness: averageWeakness,
+                weakestTags: Array(weakestTags)
+            )
+        }
+        .sorted { $0.subject < $1.subject }
+    }
+
     private func dailySort(_ lhs: Flashcard, _ rhs: Flashcard) -> Bool {
         let lhsNeverReviewed = lhs.stats.lastReviewedAt == nil
         let rhsNeverReviewed = rhs.stats.lastReviewedAt == nil
@@ -85,6 +119,17 @@ extension StudyMode {
             return "Weak Spots"
         case .cram:
             return "Cram"
+        }
+    }
+
+    var descriptionText: String {
+        switch self {
+        case .daily:
+            return "Balanced cards for today"
+        case .weakSpots:
+            return "Prioritizes cards you miss"
+        case .cram:
+            return "Deck order, fast review"
         }
     }
 }

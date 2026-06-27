@@ -23,6 +23,14 @@ struct CardStats: Codable, Equatable {
     var weaknessScore: Double
 }
 
+struct SubjectSummary: Identifiable, Equatable {
+    var id: String { subject }
+    var subject: String
+    var totalCards: Int
+    var averageWeakness: Double
+    var weakestTags: [String]
+}
+
 enum ReviewGrade: String, Codable, CaseIterable {
     case again
     case hard

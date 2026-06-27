@@ -119,7 +119,7 @@ struct HomeView: View {
                 .font(.headline.weight(.bold))
                 .foregroundStyle(appModel.isUnlockedForToday ? TungyTheme.tertiaryContainer : TungyTheme.secondary)
 
-            Text("Finish today's cards to release selected apps. Real usage reports arrive in the DeviceActivity branch.")
+            Text("Finish today's cards to release selected apps. Real usage reports arrive later.")
                 .font(.subheadline)
                 .foregroundStyle(TungyTheme.outline)
         }

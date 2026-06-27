@@ -90,19 +90,46 @@ final class FlashcardEngineTests: XCTestCase {
         XCTAssertEqual(deck.cards[0].stats.lastReviewedAt, now)
     }
 
-    private func card(_ front: String, incorrect: Int = 0, lastReviewedAt: Date? = nil, weaknessScore: Double = 0.0) -> Flashcard {
+    func testSubjectSummariesGroupBySubjectAndSortTags() {
+        let pythonOne = Deck(title: "Python Basics", subject: "Python", cards: [
+            card("functions", tags: ["syntax"], weaknessScore: 0.8),
+            card("loops", tags: ["syntax", "loops"], weaknessScore: 0.6),
+            card("comments", tags: ["basics"], weaknessScore: 0.2)
+        ])
+        let pythonTwo = Deck(title: "Python Advanced", subject: "Python", cards: [
+            card("dicts", tags: ["data"], weaknessScore: 0.7),
+            card("sets", tags: ["data"], weaknessScore: 0.5),
+            card("imports", tags: ["modules"], weaknessScore: 0.5)
+        ])
+        let algebra = Deck(title: "Algebra", subject: "Math", cards: [
+            card("linear", tags: ["equations"], weaknessScore: 0.4)
+        ])
+
+        let summaries = engine.subjectSummaries(decks: [pythonOne, pythonTwo, algebra])
+
+        XCTAssertEqual(summaries.map(\.subject), ["Math", "Python"])
+        XCTAssertEqual(summaries[0].totalCards, 1)
+        XCTAssertEqual(summaries[0].averageWeakness, 0.4, accuracy: 0.0001)
+        XCTAssertEqual(summaries[0].weakestTags, [])
+        XCTAssertEqual(summaries[1].totalCards, 6)
+        XCTAssertEqual(summaries[1].averageWeakness, 0.55, accuracy: 0.0001)
+        XCTAssertEqual(summaries[1].weakestTags, ["data", "syntax", "loops"])
+    }
+
+
+    private func card(_ front: String, incorrect: Int = 0, tags: [String] = [], lastReviewedAt: Date? = nil, weaknessScore: Double = 0.0) -> Flashcard {
         Flashcard(
             id: UUID(),
             front: front,
             back: "Back of \(front)",
-            tags: [],
+            tags: tags,
             stats: CardStats(attempts: incorrect, correct: 0, incorrect: incorrect, lastReviewedAt: lastReviewedAt, weaknessScore: weaknessScore)
         )
     }
 }
 
 private extension Deck {
-    init(title: String, cards: [Flashcard]) {
-        self.init(id: UUID(), title: title, subject: title, cards: cards)
+    init(title: String, subject: String? = nil, cards: [Flashcard]) {
+        self.init(id: UUID(), title: title, subject: subject ?? title, cards: cards)
     }
 }

@@ -64,6 +64,10 @@ struct StudyView: View {
                 }
             }
             .pickerStyle(.segmented)
+
+            Text(appModel.studyMode.descriptionText)
+                .font(.subheadline)
+                .foregroundStyle(TungyTheme.outline)
         }
         .studyPanel()
     }
