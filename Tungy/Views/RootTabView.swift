@@ -34,5 +34,6 @@ struct RootTabView: View {
 
 #Preview {
     RootTabView()
-        .environmentObject(AppModel(store: TungyStore(suiteName: "")))
+        .environmentObject(AppModel(store: TungyStore(suiteName: ""), blocker: ScreenTimeBlocker.shared))
+        .environmentObject(ScreenTimeBlocker.shared)
 }

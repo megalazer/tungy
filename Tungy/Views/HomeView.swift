@@ -186,5 +186,5 @@ private extension View {
 
 #Preview {
     HomeView()
-        .environmentObject(AppModel(store: TungyStore(suiteName: "")))
+        .environmentObject(AppModel(store: TungyStore(suiteName: ""), blocker: ScreenTimeBlocker.shared))
 }

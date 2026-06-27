@@ -11,6 +11,7 @@
 		092860309E454B5809579063 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1A4B2E5E49F95554B4FAA2 /* AppModel.swift */; };
 		377423420A58132C7AD64E22 /* TungyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B8A8CE70404F8256E4D443 /* TungyStore.swift */; };
 		4B11FAF1A63A9D8F4CF38765 /* TungyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F0AB507570018F41AA8352 /* TungyTheme.swift */; };
+		A70BA7BCDD9BB3C1D0C8D132 /* ScreenTimeBlocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30A270148D7AB93F650F4C /* ScreenTimeBlocker.swift */; };
 		15B129969BC84DD5E1F5A9DD /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF079EC6DE54A5899BC602 /* RootTabView.swift */; };
 		B614086E764A795F1F090192 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A220BA2A5D28669AA01D376 /* HomeView.swift */; };
 		87F3CD9CB34901E944449609 /* BlockSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFCEE293588F7F840E3C38 /* BlockSetupView.swift */; };
@@ -20,6 +21,8 @@
 		20E7C1D0BBEF20BB073812B2 /* TungyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748A0A342955DEE7DE3A8527 /* TungyTests.swift */; };
 		B13CB2A2E07F8602BADCB248 /* TungyStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5E145259F0F4A9420F32F /* TungyStoreTests.swift */; };
 		A3D71ED516D76940E9DA4814 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B449F779472533285F851392 /* Assets.xcassets */; };
+		1E4BDDE70ECB6AF8D127F407 /* FamilyControls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D93D295DB4010C8537064A10 /* FamilyControls.framework */; };
+		AC704A7D1BA3ADCEDF97B735 /* ManagedSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 970958FA005D9BD24E790009 /* ManagedSettings.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,7 @@
 		FC1A4B2E5E49F95554B4FAA2 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		A4B8A8CE70404F8256E4D443 /* TungyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage/TungyStore.swift; sourceTree = "<group>"; };
 		A7F0AB507570018F41AA8352 /* TungyTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design/TungyTheme.swift; sourceTree = "<group>"; };
+		DD30A270148D7AB93F650F4C /* ScreenTimeBlocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTime/ScreenTimeBlocker.swift; sourceTree = "<group>"; };
 		CBEF079EC6DE54A5899BC602 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/RootTabView.swift; sourceTree = "<group>"; };
 		3A220BA2A5D28669AA01D376 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/HomeView.swift; sourceTree = "<group>"; };
 		0FAFCEE293588F7F840E3C38 /* BlockSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/BlockSetupView.swift; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 		A5C5E145259F0F4A9420F32F /* TungyStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TungyStoreTests.swift; sourceTree = "<group>"; };
 		B449F779472533285F851392 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A7AC6DB5C4DBB26235C32E2 /* Tungy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tungy.entitlements; sourceTree = "<group>"; };
+		D93D295DB4010C8537064A10 /* FamilyControls.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FamilyControls.framework; path = System/Library/Frameworks/FamilyControls.framework; sourceTree = SDKROOT; };
+		970958FA005D9BD24E790009 /* ManagedSettings.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ManagedSettings.framework; path = System/Library/Frameworks/ManagedSettings.framework; sourceTree = SDKROOT; };
 		2F8B66AC179D53E90549E768 /* Tungy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tungy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC484DDEFC0F3EBB8D761F0 /* TungyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TungyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -56,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E4BDDE70ECB6AF8D127F407 /* FamilyControls.framework in Frameworks */,
+				AC704A7D1BA3ADCEDF97B735 /* ManagedSettings.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +94,7 @@
 				FC1A4B2E5E49F95554B4FAA2,
 				A4B8A8CE70404F8256E4D443,
 				A7F0AB507570018F41AA8352,
+				DD30A270148D7AB93F650F4C,
 				CBEF079EC6DE54A5899BC602,
 				3A220BA2A5D28669AA01D376,
 				0FAFCEE293588F7F840E3C38,
@@ -110,6 +119,8 @@
 		B687106895D06AA330DAFED5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D93D295DB4010C8537064A10 /* FamilyControls.framework */,
+				970958FA005D9BD24E790009 /* ManagedSettings.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -226,6 +237,7 @@
 				092860309E454B5809579063 /* AppModel.swift in Sources */,
 				377423420A58132C7AD64E22 /* TungyStore.swift in Sources */,
 				4B11FAF1A63A9D8F4CF38765 /* TungyTheme.swift in Sources */,
+				A70BA7BCDD9BB3C1D0C8D132 /* ScreenTimeBlocker.swift in Sources */,
 				15B129969BC84DD5E1F5A9DD /* RootTabView.swift in Sources */,
 				B614086E764A795F1F090192 /* HomeView.swift in Sources */,
 				87F3CD9CB34901E944449609 /* BlockSetupView.swift in Sources */,
