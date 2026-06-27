@@ -4,6 +4,9 @@ final class TungyStore {
     static let appGroupSuiteName = "group.com.tungy.app"
     static let shared = TungyStore()
 
+    private enum Keys {
+        static let flashcardDecks = "flashcards.decks.v1"
+    }
     let defaults: UserDefaults
     let isUsingFallbackDefaults: Bool
 
@@ -41,5 +44,13 @@ final class TungyStore {
     func saveCodable<Value: Encodable>(_ value: Value, forKey key: String, encoder: JSONEncoder = JSONEncoder()) throws {
         let data = try encoder.encode(value)
         setData(data, forKey: key)
+    }
+
+    func loadDecks() -> [Deck] {
+        loadCodable([Deck].self, forKey: Keys.flashcardDecks) ?? []
+    }
+
+    func saveDecks(_ decks: [Deck]) throws {
+        try saveCodable(decks, forKey: Keys.flashcardDecks)
     }
 }

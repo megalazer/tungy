@@ -12,6 +12,8 @@
 		377423420A58132C7AD64E22 /* TungyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B8A8CE70404F8256E4D443 /* TungyStore.swift */; };
 		4B11FAF1A63A9D8F4CF38765 /* TungyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F0AB507570018F41AA8352 /* TungyTheme.swift */; };
 		A70BA7BCDD9BB3C1D0C8D132 /* ScreenTimeBlocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30A270148D7AB93F650F4C /* ScreenTimeBlocker.swift */; };
+		CD491FB29449BCDE8DDD5E9C /* FlashcardModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E239571CD5BEBE68F659551 /* FlashcardModels.swift */; };
+		8EE7FD9D52DA13AA8B0A2BC9 /* FlashcardEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B97A5CD4F35037E8CAB72 /* FlashcardEngine.swift */; };
 		15B129969BC84DD5E1F5A9DD /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF079EC6DE54A5899BC602 /* RootTabView.swift */; };
 		B614086E764A795F1F090192 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A220BA2A5D28669AA01D376 /* HomeView.swift */; };
 		87F3CD9CB34901E944449609 /* BlockSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFCEE293588F7F840E3C38 /* BlockSetupView.swift */; };
@@ -20,6 +22,7 @@
 		C005FBFF040DE5ADF2CD2BCF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8BDDAD1A1DABA87B50AAA7 /* SettingsView.swift */; };
 		20E7C1D0BBEF20BB073812B2 /* TungyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748A0A342955DEE7DE3A8527 /* TungyTests.swift */; };
 		B13CB2A2E07F8602BADCB248 /* TungyStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5E145259F0F4A9420F32F /* TungyStoreTests.swift */; };
+		A18FB55CD8F5D85CA87B8D38 /* FlashcardEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130459CCB14D9A09B16B6947 /* FlashcardEngineTests.swift */; };
 		A3D71ED516D76940E9DA4814 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B449F779472533285F851392 /* Assets.xcassets */; };
 		1E4BDDE70ECB6AF8D127F407 /* FamilyControls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D93D295DB4010C8537064A10 /* FamilyControls.framework */; };
 		AC704A7D1BA3ADCEDF97B735 /* ManagedSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 970958FA005D9BD24E790009 /* ManagedSettings.framework */; };
@@ -41,6 +44,8 @@
 		A4B8A8CE70404F8256E4D443 /* TungyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage/TungyStore.swift; sourceTree = "<group>"; };
 		A7F0AB507570018F41AA8352 /* TungyTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design/TungyTheme.swift; sourceTree = "<group>"; };
 		DD30A270148D7AB93F650F4C /* ScreenTimeBlocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTime/ScreenTimeBlocker.swift; sourceTree = "<group>"; };
+		2E239571CD5BEBE68F659551 /* FlashcardModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcards/FlashcardModels.swift; sourceTree = "<group>"; };
+		5E4B97A5CD4F35037E8CAB72 /* FlashcardEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcards/FlashcardEngine.swift; sourceTree = "<group>"; };
 		CBEF079EC6DE54A5899BC602 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/RootTabView.swift; sourceTree = "<group>"; };
 		3A220BA2A5D28669AA01D376 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/HomeView.swift; sourceTree = "<group>"; };
 		0FAFCEE293588F7F840E3C38 /* BlockSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/BlockSetupView.swift; sourceTree = "<group>"; };
@@ -49,6 +54,7 @@
 		EC8BDDAD1A1DABA87B50AAA7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/SettingsView.swift; sourceTree = "<group>"; };
 		748A0A342955DEE7DE3A8527 /* TungyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TungyTests.swift; sourceTree = "<group>"; };
 		A5C5E145259F0F4A9420F32F /* TungyStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TungyStoreTests.swift; sourceTree = "<group>"; };
+		130459CCB14D9A09B16B6947 /* FlashcardEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardEngineTests.swift; sourceTree = "<group>"; };
 		B449F779472533285F851392 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A7AC6DB5C4DBB26235C32E2 /* Tungy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tungy.entitlements; sourceTree = "<group>"; };
 		D93D295DB4010C8537064A10 /* FamilyControls.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FamilyControls.framework; path = System/Library/Frameworks/FamilyControls.framework; sourceTree = SDKROOT; };
@@ -95,6 +101,8 @@
 				A4B8A8CE70404F8256E4D443,
 				A7F0AB507570018F41AA8352,
 				DD30A270148D7AB93F650F4C,
+				2E239571CD5BEBE68F659551,
+				5E4B97A5CD4F35037E8CAB72,
 				CBEF079EC6DE54A5899BC602,
 				3A220BA2A5D28669AA01D376,
 				0FAFCEE293588F7F840E3C38,
@@ -112,6 +120,7 @@
 			children = (
 				748A0A342955DEE7DE3A8527,
 				A5C5E145259F0F4A9420F32F,
+				130459CCB14D9A09B16B6947,
 			);
 			path = TungyTests;
 			sourceTree = "<group>";
@@ -238,6 +247,8 @@
 				377423420A58132C7AD64E22 /* TungyStore.swift in Sources */,
 				4B11FAF1A63A9D8F4CF38765 /* TungyTheme.swift in Sources */,
 				A70BA7BCDD9BB3C1D0C8D132 /* ScreenTimeBlocker.swift in Sources */,
+				CD491FB29449BCDE8DDD5E9C /* FlashcardModels.swift in Sources */,
+				8EE7FD9D52DA13AA8B0A2BC9 /* FlashcardEngine.swift in Sources */,
 				15B129969BC84DD5E1F5A9DD /* RootTabView.swift in Sources */,
 				B614086E764A795F1F090192 /* HomeView.swift in Sources */,
 				87F3CD9CB34901E944449609 /* BlockSetupView.swift in Sources */,
@@ -253,6 +264,7 @@
 			files = (
 				20E7C1D0BBEF20BB073812B2 /* TungyTests.swift in Sources */,
 				B13CB2A2E07F8602BADCB248 /* TungyStoreTests.swift in Sources */,
+				A18FB55CD8F5D85CA87B8D38 /* FlashcardEngineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
