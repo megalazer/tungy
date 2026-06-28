@@ -119,6 +119,8 @@ struct BlockSetupView: View {
             return "Not determined"
         case .approved:
             return "Approved"
+        case .approvedWithDataAccess:
+            return "Approved"
         case .denied:
             return "Denied"
         @unknown default:
@@ -127,10 +129,12 @@ struct BlockSetupView: View {
     }
 
     private var isApproved: Bool {
-        if case .approved = blocker.authorizationStatus {
+        switch blocker.authorizationStatus {
+        case .approved, .approvedWithDataAccess:
             return true
+        default:
+            return false
         }
-        return false
     }
 }
 

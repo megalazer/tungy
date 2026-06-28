@@ -75,9 +75,10 @@ final class AppModel: ObservableObject {
         self.studyMode = .daily
         self.studyCards = []
         self.isAnswerVisible = false
-        self.dailyGoal = store.loadDailyGoal()
+        let loadedDailyGoal = store.loadDailyGoal()
+        self.dailyGoal = loadedDailyGoal
 
-        let initialDayKey = DailyGate().dayKey(for: Date(), resetHour: self.dailyGoal.resetHour, calendar: .current)
+        let initialDayKey = DailyGate().dayKey(for: Date(), resetHour: loadedDailyGoal.resetHour, calendar: .current)
         self.dailyProgress = store.loadDailyProgress() ?? .empty(dayKey: initialDayKey)
 
         if shouldSeedDecks {
