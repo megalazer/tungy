@@ -16,9 +16,6 @@
 		8EE7FD9D52DA13AA8B0A2BC9 /* FlashcardEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B97A5CD4F35037E8CAB72 /* FlashcardEngine.swift */; };
 		E5B441AFBF23D352BD7C8353 /* DailyGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725FED58D1D021D839F6F8B4 /* DailyGoal.swift */; };
 		4BD070703B03DB804581C68F /* DailyGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807CA0C92E51DF1B1C17DBB0 /* DailyGate.swift */; };
-				111111111111111111111111 /* PaywallView.swift */,
-
-				222222222222222222222222 /* PaywallView.swift in Sources */,
 
 		15B129969BC84DD5E1F5A9DD /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF079EC6DE54A5899BC602 /* RootTabView.swift */; };
 		B614086E764A795F1F090192 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A220BA2A5D28669AA01D376 /* HomeView.swift */; };
@@ -58,7 +55,6 @@
 		5E4B97A5CD4F35037E8CAB72 /* FlashcardEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcards/FlashcardEngine.swift; sourceTree = "<group>"; };
 		725FED58D1D021D839F6F8B4 /* DailyGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcards/DailyGoal.swift; sourceTree = "<group>"; };
 		807CA0C92E51DF1B1C17DBB0 /* DailyGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcards/DailyGate.swift; sourceTree = "<group>"; };
-				111111111111111111111111 /* PaywallView.swift */,
 
 		CBEF079EC6DE54A5899BC602 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/RootTabView.swift; sourceTree = "<group>"; };
 		3A220BA2A5D28669AA01D376 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/HomeView.swift; sourceTree = "<group>"; };
