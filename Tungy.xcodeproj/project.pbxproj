@@ -16,6 +16,10 @@
 		8EE7FD9D52DA13AA8B0A2BC9 /* FlashcardEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B97A5CD4F35037E8CAB72 /* FlashcardEngine.swift */; };
 		E5B441AFBF23D352BD7C8353 /* DailyGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725FED58D1D021D839F6F8B4 /* DailyGoal.swift */; };
 		4BD070703B03DB804581C68F /* DailyGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807CA0C92E51DF1B1C17DBB0 /* DailyGate.swift */; };
+				111111111111111111111111 /* PaywallView.swift */,
+
+				222222222222222222222222 /* PaywallView.swift in Sources */,
+
 		15B129969BC84DD5E1F5A9DD /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF079EC6DE54A5899BC602 /* RootTabView.swift */; };
 		B614086E764A795F1F090192 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A220BA2A5D28669AA01D376 /* HomeView.swift */; };
 		87F3CD9CB34901E944449609 /* BlockSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFCEE293588F7F840E3C38 /* BlockSetupView.swift */; };
@@ -30,6 +34,8 @@
 		A3D71ED516D76940E9DA4814 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B449F779472533285F851392 /* Assets.xcassets */; };
 		1E4BDDE70ECB6AF8D127F407 /* FamilyControls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D93D295DB4010C8537064A10 /* FamilyControls.framework */; };
 		AC704A7D1BA3ADCEDF97B735 /* ManagedSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 970958FA005D9BD24E790009 /* ManagedSettings.framework */; };
+		222222222222222222222222 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111111 /* PaywallView.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +58,8 @@
 		5E4B97A5CD4F35037E8CAB72 /* FlashcardEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcards/FlashcardEngine.swift; sourceTree = "<group>"; };
 		725FED58D1D021D839F6F8B4 /* DailyGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcards/DailyGoal.swift; sourceTree = "<group>"; };
 		807CA0C92E51DF1B1C17DBB0 /* DailyGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcards/DailyGate.swift; sourceTree = "<group>"; };
+				111111111111111111111111 /* PaywallView.swift */,
+
 		CBEF079EC6DE54A5899BC602 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/RootTabView.swift; sourceTree = "<group>"; };
 		3A220BA2A5D28669AA01D376 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/HomeView.swift; sourceTree = "<group>"; };
 		0FAFCEE293588F7F840E3C38 /* BlockSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/BlockSetupView.swift; sourceTree = "<group>"; };
@@ -69,6 +77,8 @@
 		970958FA005D9BD24E790009 /* ManagedSettings.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ManagedSettings.framework; path = System/Library/Frameworks/ManagedSettings.framework; sourceTree = SDKROOT; };
 		2F8B66AC179D53E90549E768 /* Tungy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tungy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC484DDEFC0F3EBB8D761F0 /* TungyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TungyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		111111111111111111111111 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/PaywallView.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +273,8 @@
 				8EE7FD9D52DA13AA8B0A2BC9 /* FlashcardEngine.swift in Sources */,
 				E5B441AFBF23D352BD7C8353 /* DailyGoal.swift in Sources */,
 				4BD070703B03DB804581C68F /* DailyGate.swift in Sources */,
+				222222222222222222222222 /* PaywallView.swift in Sources */,
+
 				15B129969BC84DD5E1F5A9DD /* RootTabView.swift in Sources */,
 				B614086E764A795F1F090192 /* HomeView.swift in Sources */,
 				87F3CD9CB34901E944449609 /* BlockSetupView.swift in Sources */,

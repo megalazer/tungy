@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct RootTabView: View {
+    @AppStorage("hasSeenPaywall") private var hasSeenPaywall = false
+    @State private var showPaywall = false
+
     var body: some View {
         TabView {
             HomeView()
@@ -29,6 +32,17 @@ struct RootTabView: View {
                 }
         }
         .tint(TungyTheme.primary)
+        .onAppear {
+            if !hasSeenPaywall {
+                showPaywall = true
+            }
+        }
+        .fullScreenCover(isPresented: $showPaywall) {
+            PaywallView()
+                .onDisappear {
+                    hasSeenPaywall = true
+                }
+        }
     }
 }
 
