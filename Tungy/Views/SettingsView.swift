@@ -2,6 +2,8 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject private var appModel: AppModel
+    @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = true
+
 
     var body: some View {
         NavigationStack {
@@ -22,6 +24,14 @@ struct SettingsView: View {
                     LabeledContent("App Group") {
                         Text(appModel.store.isUsingFallbackDefaults ? "Fallback defaults" : "group.com.tungy.app")
                             .foregroundStyle(TungyTheme.outline)
+                    }
+                }
+
+                Section("Developer Tools") {
+                    Button(role: .destructive) {
+                        hasCompletedOnboarding = false
+                    } label: {
+                        Text("Reset Onboarding Flow")
                     }
                 }
             }
